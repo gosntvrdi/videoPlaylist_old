@@ -1,7 +1,7 @@
 import mysql.connector as mariadb
 import ftplib
 import os
-
+from apscheduler.schedulers.blocking import BlockingScheduler
 
 dirname = os.path.dirname(__file__)
 my_path = os.path.abspath(os.path.dirname(__file__))
@@ -98,3 +98,4 @@ def playlist():
     playlistPrepareForVLC()
 
 
+scheduler.add_job(playlist, trigger='cron', hour='21', minute='34')
