@@ -97,5 +97,5 @@ def playlist():
         dayClock()
     playlistPrepareForVLC()
 
-
+scheduler = BlockingScheduler()
 scheduler.add_job(playlist, trigger='cron', hour='21', minute='34')
