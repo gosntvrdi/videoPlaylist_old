@@ -98,5 +98,5 @@ def playlist():
     playlistPrepareForVLC()
 
 scheduler = BlockingScheduler()
-scheduler.add_job(playlist, trigger='cron', hour='22', minute='09')
+scheduler.add_job(playlist, 'interval', minutes=10)
 scheduler.start()
